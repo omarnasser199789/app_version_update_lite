@@ -3,22 +3,27 @@
 Retrieve version and url for local app update against store app
 Android and iOS  
 
+
+## [Omar Nasser](https://github.com/omarnasser199789)
+<img src="https://avatars.githubusercontent.com/u/22509641?s=96&v=4" alt="Omar Nasser" width="50" height="50" style="border-radius: 50%;">
+
+ [![GitHub](https://img.shields.io/badge/GitHub-gray)](https://github.com/omarnasser199789)
+ [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue)](https://www.linkedin.com/in/omar-mouhamad-nasser/)
+ [![Portfolio](https://img.shields.io/badge/Portfolio-orange)](https://omar-nasser-portfolio.web.app/#/)
+
 ## Features
- Using as reference packages like [in_app_update](https://pub.dev/packages/in_app_update) , [version_check](https://pub.dev/packages/version_check).
 
 Compares local version with the respective store version for the purpose of detecting user-side version updates.
-
-It also provides widgets like dialog , bottom sheets and pages for you to display the update option to the user.
 
 ## Getting started
 
 ```
-$ flutter pub add app_version_update
+$ flutter pub add app_version_update_lite
 ```
 or add in your dependencies
 ```
 dependencies:
-  app_version_update: <latest>
+  app_version_update_lite: <latest>
 ```
 
 to use this app you need to have the app hosted in stores.
@@ -48,83 +53,11 @@ await AppVersionUpdate.checkForUpdates(
             print(data.storeUrl);
             print(data.storeVersion);
             if(data.canUpdate!){
-              //showDialog(... your custom widgets view) 
-              //or use our widgets
-              // AppVersionUpdate.showAlertUpdate
-              // AppVersionUpdate.showBottomSheetUpdate
-              // AppVersionUpdate.showPageUpdate
-              AppVersionUpdate.showAlertUpdate(
-              appVersionResult: data, context: context);
+             //here you can show any custom dialog.
             }
          });
 ```
 
-Customize the Alert Dialog
-
-```dart
-// you also have some options to customize our Alert Dialog 
-AppUpdateVersion.showAlertUpdate(
-    {BuildContext? context,
-      AppVersionResult? appVersionResult,
-      bool? mandatory = false,
-      String? title = 'New version available',
-      TextStyle titleTextStyle =
-          const TextStyle(fontSize: 24.0, fontWeight: FontWeight.w500),
-      String? content = 'Would you like to update your application?',
-      TextStyle contentTextStyle =
-          const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),
-      ButtonStyle? cancelButtonStyle = const ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(Colors.redAccent)),
-      ButtonStyle? updateButtonStyle = const ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(Colors.green)),
-      String? cancelButtonText = 'UPDATE LATER',
-      String? updateButtonText = 'UPDATE',
-      TextStyle? cancelTextStyle = const TextStyle(color: Colors.white),
-      TextStyle? updateTextStyle = const TextStyle(color: Colors.white),
-      Color? backgroundColor = Colors.white})
-```
-Customize the our bottom sheet
-
-```dart
-AppUpdateVersion.showBottomSheetUpdate(
-      {@required BuildContext? context,
-      @required AppVersionResult? appVersionResult,
-      bool? mandatory = false,
-      String? title = 'New version avaible',
-      Widget? content}) async {
-    await showModalBottomSheet(
-        isDismissible: !mandatory!,
-        context: context!,
-        builder: (context) => BottomSheetUpdateVersion(
-              appVersionResult: appVersionResult,
-              mandatory: mandatory,
-              content: content,
-              title: title,
-            ));
-  }
-```
-
-Customize the Page
-```dart
-// you also have some options to customize our Page
-AppUpdateVersion.showPageUpdate(
-    {@required BuildContext? context,
-    @required AppVersionResult? appVersionResult,
-    bool? mandatory = false,
-    Widget? page}) async {
-     Navigator.push(
-        context!,
-        MaterialPageRoute(
-            builder: (context) =>
-                page ??
-                UpdateVersionPage(
-                  mandatory: mandatory,
-                  appVersionResult: appVersionResult,
-                )));
-  }
-  
- 
-```
 
 ## Additional information
 
@@ -132,8 +65,6 @@ AppUpdateVersion.showPageUpdate(
 |------------------------------|-------------|
 | Mandatory or optional update | released    |
 | Create TestMode              | development |
-| Bottom sheet widget          | released    |
-| Page widget                  | released    |
 | Handle Exceptions            | development |
 | New options custom widgets   | released    |
 | Automatic country detection  | released    |
