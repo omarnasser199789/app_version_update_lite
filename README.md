@@ -1,4 +1,4 @@
-[![Star on GitHub](https://img.shields.io/github/stars/kauemurakami/app_version_update.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/kauemurakami/app_version_update)  
+[![Star on GitHub](https://img.shields.io/github/stars/kauemurakami/app_version_update.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/omarnasser199789/app_version_update_lite)  
 
 Retrieve version and url for local app update against store app
 Android and iOS  

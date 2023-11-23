@@ -1,6 +1,6 @@
 name: app_version_update_lite
 description: An easy and quick way to check if the local app is updated with the same version in their respective stores (Play Store / Apple Store ).
-version: 4.0.2
+version: 4.0.4
 homepage: https://github.com/omarnasser199789/app_version_update_lite
 
 environment:
