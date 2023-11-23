@@ -1,0 +1,22 @@
+name: app_version_update_lite
+description: An easy and quick way to check if the local app is updated with the same version in their respective stores (Play Store / Apple Store ).
+version: 4.0.2
+homepage: https://github.com/omarnasser199789/app_version_update_lite
+
+environment:
+  sdk: ">=2.19.2 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  http:
+  package_info_plus:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
